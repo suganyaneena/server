@@ -56,9 +56,9 @@ app.post("/create", async(req,res)=>{
 */
 app.put("/update", async(req,res)=>{
     console.log(req.body)
-    const {id,...rest} = req.body
+    const {_id,...rest} = req.body
     console.log(rest)
-    const data = await userModel.updateOne({_id : id},rest)
+    const data = await userModel.updateOne({_id : _id},rest)
    // await userModel.updateOne({_id : req.body.id},{name : "sugan" })
    
     res.send({success : true, message: "data Update successfully", data : data})
